@@ -1,0 +1,9 @@
+{
+  "name": "AestheticClubs",
+  "short_name": "AestheticClubs",
+  "description": "Curated Men's Fashion & Shop This Look Outfits via Pinterest",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#09090B",
+  "theme_color": "#C5A059"
+}
