@@ -1,161 +1,47 @@
-/* --- Global Resets & Base Styles --- */
-body {
-    background-color: var(--bg-main) !important;
-    color: var(--text-primary) !important;
-    font-family: var(--font-sans);
-    margin: 0;
-    padding: 0;
-}
-
-/* --- Header & Navigation Fix --- */
-.site-header {
-    background: #ffffff !important;
-    border-bottom: 1px solid var(--border-light);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    padding: 18px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.brand-logo {
-    font-family: var(--font-serif);
-    font-size: 1.5rem;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-    color: var(--text-primary) !important;
-    text-decoration: none;
-}
-
-/* Flex Gap Fix for Nav Overlap */
-.nav-links, nav {
-    display: flex !important;
-    align-items: center !important;
-    gap: 28px !important; /* Space between Home, Old Money, Streetwear */
-}
-
-.nav-links a, nav a {
-    color: var(--text-secondary) !important;
-    text-decoration: none !important;
-    font-weight: 500;
-    font-size: 0.92rem;
-    letter-spacing: 0.3px;
-    transition: var(--transition);
-}
-
-.nav-links a:hover, nav a:hover {
-    color: var(--text-primary) !important;
-}
-
-/* --- Hero Section Upgrade --- */
+/* --- Single-Code Sea Beach, Ocean & Moving Ships Hero --- */
 .hero-section {
-    padding: 90px 20px 60px;
+    padding: 100px 20px 80px;
     text-align: center;
-    background-color: var(--bg-surface);
+    position: relative;
+    overflow: hidden;
+    
+    /* Real Ocean Beach Texture with Soft Clean Overlay */
+    background: 
+        /* Soft Luxury Overlay for 100% Text Readability */
+        linear-gradient(
+            180deg, 
+            rgba(255, 255, 255, 0.92) 0%, 
+            rgba(240, 248, 251, 0.85) 60%, 
+            rgba(255, 255, 255, 0.95) 100%
+        ),
+        /* High-End Minimalist Ocean Beach Background */
+        url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    
     border-bottom: 1px solid var(--border-light);
 }
 
-.hero-subtitle {
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-size: 0.72rem;
-    color: var(--text-muted);
-    font-weight: 600;
-    margin-bottom: 12px;
-}
-
-.hero-title {
-    font-family: var(--font-serif);
-    font-size: 3.5rem;
-    font-weight: 600;
-    line-height: 1.1;
-    letter-spacing: -1px;
-    color: var(--text-primary);
-    max-width: 800px;
-    margin: 0 auto 18px;
-}
-
-.hero-description {
-    color: var(--text-secondary);
-    font-size: 1.05rem;
-    max-width: 580px;
-    margin: 0 auto 32px;
-    line-height: 1.6;
-}
-
-/* --- Filter Pills --- */
-.filter-container {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-}
-
-.pill {
-    background: #ffffff;
-    color: var(--text-primary);
-    border: 1px solid var(--border-light);
-    padding: 10px 22px;
-    border-radius: var(--radius-pill);
-    font-size: 0.88rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.pill.active, .pill:hover {
-    background: var(--accent-black) !important;
-    color: #ffffff !important;
-    border-color: var(--accent-black) !important;
-}
-
-/* --- Product Cards Grid --- */
-.grid, .cards-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 32px;
-    padding: 50px 40px;
-    max-width: 1300px;
-    margin: 0 auto;
-}
-
-.look-card {
-    background: #ffffff;
-    border-radius: var(--radius-card);
-    overflow: hidden;
-    transition: var(--transition);
-    border: 1px solid transparent;
-}
-
-.look-card:hover {
-    transform: translateY(-4px);
-}
-
-.look-card img {
-    width: 100%;
-    aspect-ratio: 3 / 4;
-    object-fit: cover;
-    border-radius: var(--radius-card);
-    transition: transform 0.4s ease;
-}
-
-.look-card:hover img {
-    transform: scale(1.02);
-}
-
-/* Floating Badge */
-.aesthetic-badge {
+/* Moving Distant Ships Silhouette (Zero File Upload Needed) */
+.hero-section::after {
+    content: '';
     position: absolute;
-    top: 14px;
-    left: 14px;
-    background: #ffffff;
-    color: var(--text-primary);
-    font-size: 0.68rem;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    padding: 6px 12px;
-    border-radius: 4px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    height: 35px;
+    opacity: 0.2; /* Subtle, elegant silhouette */
+    pointer-events: none;
+    
+    /* Direct Embedded SVG Ships */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 50'%3E%3Cpath d='M20 35h40l8 10H12l8-10zM35 23h10v12H35zM150 35h50l10 10h-70l10-10zM170 20h12v15h-12z' fill='%230f172a'/%3E%3C/svg%3E");
+    background-repeat: repeat-x;
+    background-size: 320px auto;
+    
+    /* Horizon Par Ships Moving Animation */
+    animation: moveShips 75s linear infinite;
+}
+
+/* Ship Movement Keyframe */
+@keyframes moveShips {
+    from { background-position-x: 0; }
+    to { background-position-x: 1000px; }
 }
