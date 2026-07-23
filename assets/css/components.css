@@ -7,7 +7,7 @@ body {
     padding: 0;
 }
 
-/* --- Header & Navigation Fix --- */
+/* --- Navigation Header --- */
 .site-header {
     background: rgba(255, 255, 255, 0.95) !important;
     backdrop-filter: blur(12px);
@@ -30,11 +30,11 @@ body {
     letter-spacing: -0.5px;
 }
 
-/* Nav Link Overlap Fix */
+/* Nav Link Spacing */
 nav, .nav-links {
     display: flex !important;
     align-items: center !important;
-    gap: 32px !important; /* Proper distance between links */
+    gap: 32px !important;
 }
 
 nav a, .nav-links a {
@@ -49,48 +49,33 @@ nav a:hover, .nav-links a:hover {
     color: #0f172a !important;
 }
 
-/* --- Luxury Frosted Beach Hero Section --- */
+/* --- Coastal Beach Hero Section (No Individual Text Boxes) --- */
 .hero-section {
     padding: 90px 20px 80px;
     text-align: center;
     position: relative;
     
-    /* High-Res Coastal Beach Background */
-    background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat fixed;
+    /* High-Res Coastal Beach Background with soft light overlay */
+    background: 
+        linear-gradient(180deg, rgba(255, 255, 255, 0.65) 0%, rgba(240, 248, 255, 0.45) 100%),
+        url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat fixed;
     border-bottom: 1px solid #e2e8f0;
 }
 
-/* Subtle Gradient Overlay for Soft Lighting */
-.hero-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(180deg, rgba(255,255,255,0.4) 0%, rgba(15,23,42,0.1) 100%);
-    pointer-events: none;
-}
-
-/* Frosted Glass Card Wrapper (Making Text Ultra-Legible) */
-.hero-section > * {
-    position: relative;
-    z-index: 2;
-}
-
-/* Hero Content Glass Styling */
+/* Clean Floating Typography - Zero Dabbe */
 .hero-subtitle {
     display: inline-block;
     text-transform: uppercase;
     letter-spacing: 3px;
     font-size: 0.75rem;
-    color: #1e293b !important;
+    color: #0f172a !important;
     font-weight: 700;
     margin-bottom: 14px;
-    background: rgba(255, 255, 255, 0.85);
-    padding: 6px 16px;
-    border-radius: 20px;
-    backdrop-filter: blur(8px);
+    background: transparent !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
 }
 
 .hero-title {
@@ -101,23 +86,24 @@ nav a:hover, .nav-links a:hover {
     color: #0f172a !important;
     max-width: 820px;
     margin: 0 auto 18px;
-    text-shadow: 0 2px 10px rgba(255, 255, 255, 0.8);
+    letter-spacing: -0.5px;
 }
 
 .hero-description {
     color: #1e293b !important;
     font-size: 1.05rem;
-    font-weight: 500;
+    font-weight: 600;
     max-width: 600px;
     margin: 0 auto 36px;
     line-height: 1.6;
-    background: rgba(255, 255, 255, 0.75);
-    padding: 12px 24px;
-    border-radius: 12px;
-    backdrop-filter: blur(10px);
+    background: transparent !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
 }
 
-/* --- Filter Pills --- */
+/* --- Clean Filter Pills --- */
 .filter-container {
     display: flex;
     justify-content: center;
