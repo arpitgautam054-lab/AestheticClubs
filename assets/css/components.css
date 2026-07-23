@@ -1,47 +1,116 @@
-/* --- Single-Code Sea Beach, Ocean & Moving Ships Hero --- */
+/* --- Global Studio Reset --- */
+body {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* --- Navigation Header Fix (Strict Spacing) --- */
+.site-header {
+    background: #ffffff !important;
+    border-bottom: 1px solid #e2e8f0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 18px 40px;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+}
+
+.brand-logo {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0f172a !important;
+    text-decoration: none;
+    letter-spacing: -0.5px;
+}
+
+/* Hard Fix for Nav Link Overlap */
+nav, .nav-links {
+    display: flex !important;
+    align-items: center !important;
+    gap: 28px !important; /* Ensures space between Home, Old Money, Streetwear */
+}
+
+nav a, .nav-links a {
+    color: #475569 !important;
+    text-decoration: none !important;
+    font-weight: 500;
+    font-size: 0.92rem;
+    transition: color 0.2s ease;
+}
+
+nav a:hover, .nav-links a:hover {
+    color: #0f172a !important;
+}
+
+/* --- Pure Studio Hero Section (No Messy Backgrounds) --- */
 .hero-section {
-    padding: 100px 20px 80px;
+    padding: 80px 20px 60px;
     text-align: center;
-    position: relative;
-    overflow: hidden;
-    
-    /* Real Ocean Beach Texture with Soft Clean Overlay */
-    background: 
-        /* Soft Luxury Overlay for 100% Text Readability */
-        linear-gradient(
-            180deg, 
-            rgba(255, 255, 255, 0.92) 0%, 
-            rgba(240, 248, 251, 0.85) 60%, 
-            rgba(255, 255, 255, 0.95) 100%
-        ),
-        /* High-End Minimalist Ocean Beach Background */
-        url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-    
-    border-bottom: 1px solid var(--border-light);
+    background-color: #f8fafc !important; /* Soft studio ambient grey */
+    background-image: none !important;
+    border-bottom: 1px solid #e2e8f0;
 }
 
-/* Moving Distant Ships Silhouette (Zero File Upload Needed) */
-.hero-section::after {
-    content: '';
-    position: absolute;
-    bottom: 10px;
-    left: 0;
-    width: 100%;
-    height: 35px;
-    opacity: 0.2; /* Subtle, elegant silhouette */
-    pointer-events: none;
-    
-    /* Direct Embedded SVG Ships */
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 50'%3E%3Cpath d='M20 35h40l8 10H12l8-10zM35 23h10v12H35zM150 35h50l10 10h-70l10-10zM170 20h12v15h-12z' fill='%230f172a'/%3E%3C/svg%3E");
-    background-repeat: repeat-x;
-    background-size: 320px auto;
-    
-    /* Horizon Par Ships Moving Animation */
-    animation: moveShips 75s linear infinite;
+.hero-section::after, .hero-section::before {
+    display: none !important; /* Kills any background graphic artifacts */
 }
 
-/* Ship Movement Keyframe */
-@keyframes moveShips {
-    from { background-position-x: 0; }
-    to { background-position-x: 1000px; }
+.hero-subtitle {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.72rem;
+    color: #64748b !important;
+    font-weight: 600;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.hero-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 3.2rem;
+    font-weight: 600;
+    line-height: 1.25;
+    color: #0f172a !important;
+    max-width: 800px;
+    margin: 0 auto 16px;
+}
+
+.hero-description {
+    color: #475569 !important;
+    font-size: 1.02rem;
+    max-width: 580px;
+    margin: 0 auto 32px;
+    line-height: 1.6;
+}
+
+/* --- Clean Filter Pills --- */
+.filter-container {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.pill {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    border: 1px solid #cbd5e1 !important;
+    padding: 10px 22px;
+    border-radius: 999px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.pill.active, .pill:hover {
+    background: #0f172a !important;
+    color: #ffffff !important;
+    border-color: #0f172a !important;
 }
