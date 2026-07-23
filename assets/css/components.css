@@ -1,105 +1,161 @@
-/* Overall Page Dark Background */
+/* --- Global Resets & Base Styles --- */
 body {
     background-color: var(--bg-main) !important;
     color: var(--text-primary) !important;
+    font-family: var(--font-sans);
+    margin: 0;
+    padding: 0;
 }
 
-/* Header / Navbar Styling */
+/* --- Header & Navigation Fix --- */
 .site-header {
-    background: rgba(10, 11, 13, 0.8) !important;
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border-subtle);
+    background: #ffffff !important;
+    border-bottom: 1px solid var(--border-light);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 18px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .brand-logo {
-    color: var(--text-primary) !important;
     font-family: var(--font-serif);
-    letter-spacing: 1px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: var(--text-primary) !important;
+    text-decoration: none;
 }
 
-.brand-logo span {
-    color: var(--accent-gold);
+/* Flex Gap Fix for Nav Overlap */
+.nav-links, nav {
+    display: flex !important;
+    align-items: center !important;
+    gap: 28px !important; /* Space between Home, Old Money, Streetwear */
 }
 
-/* Hero Section Upgrade */
+.nav-links a, nav a {
+    color: var(--text-secondary) !important;
+    text-decoration: none !important;
+    font-weight: 500;
+    font-size: 0.92rem;
+    letter-spacing: 0.3px;
+    transition: var(--transition);
+}
+
+.nav-links a:hover, nav a:hover {
+    color: var(--text-primary) !important;
+}
+
+/* --- Hero Section Upgrade --- */
 .hero-section {
-    background: radial-gradient(circle at top center, rgba(197, 160, 89, 0.08) 0%, rgba(10, 11, 13, 1) 70%) !important;
-    padding: 80px 20px 50px;
+    padding: 90px 20px 60px;
     text-align: center;
+    background-color: var(--bg-surface);
+    border-bottom: 1px solid var(--border-light);
 }
 
 .hero-subtitle {
     text-transform: uppercase;
-    letter-spacing: 4px;
-    font-size: 0.75rem;
-    color: var(--accent-gold);
+    letter-spacing: 3px;
+    font-size: 0.72rem;
+    color: var(--text-muted);
     font-weight: 600;
+    margin-bottom: 12px;
 }
 
 .hero-title {
     font-family: var(--font-serif);
-    font-size: 3.2rem;
+    font-size: 3.5rem;
     font-weight: 600;
-    line-height: 1.15;
+    line-height: 1.1;
+    letter-spacing: -1px;
     color: var(--text-primary);
-    margin: 16px 0;
+    max-width: 800px;
+    margin: 0 auto 18px;
 }
 
-/* Filter Pills */
-.pill {
-    background: var(--bg-surface);
+.hero-description {
     color: var(--text-secondary);
-    border: 1px solid var(--border-subtle);
-    padding: 10px 24px;
+    font-size: 1.05rem;
+    max-width: 580px;
+    margin: 0 auto 32px;
+    line-height: 1.6;
+}
+
+/* --- Filter Pills --- */
+.filter-container {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.pill {
+    background: #ffffff;
+    color: var(--text-primary);
+    border: 1px solid var(--border-light);
+    padding: 10px 22px;
     border-radius: var(--radius-pill);
+    font-size: 0.88rem;
+    font-weight: 500;
+    cursor: pointer;
     transition: var(--transition);
 }
 
 .pill.active, .pill:hover {
-    background: var(--accent-gold) !important;
-    color: #000 !important;
-    border-color: var(--accent-gold) !important;
-    font-weight: 600;
+    background: var(--accent-black) !important;
+    color: #ffffff !important;
+    border-color: var(--accent-black) !important;
 }
 
-/* Outfit Cards (Zoom Hover + Floating Glass Badge) */
+/* --- Product Cards Grid --- */
+.grid, .cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 32px;
+    padding: 50px 40px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
 .look-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-subtle);
+    background: #ffffff;
     border-radius: var(--radius-card);
     overflow: hidden;
     transition: var(--transition);
+    border: 1px solid transparent;
 }
 
 .look-card:hover {
-    transform: translateY(-6px);
-    border-color: var(--border-hover);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+    transform: translateY(-4px);
 }
 
 .look-card img {
-    aspect-ratio: 3/4;
-    object-fit: cover;
     width: 100%;
-    transition: transform 0.5s ease;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    border-radius: var(--radius-card);
+    transition: transform 0.4s ease;
 }
 
 .look-card:hover img {
-    transform: scale(1.04);
+    transform: scale(1.02);
 }
 
-/* Glassmorphism Floating Badge */
+/* Floating Badge */
 .aesthetic-badge {
     position: absolute;
     top: 14px;
     left: 14px;
-    background: rgba(10, 11, 13, 0.65) !important;
-    backdrop-filter: blur(8px);
-    color: var(--accent-gold) !important;
-    border: 1px solid rgba(197, 160, 89, 0.3);
+    background: #ffffff;
+    color: var(--text-primary);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 0.65rem;
     padding: 6px 12px;
     border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }

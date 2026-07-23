@@ -1,26 +1,25 @@
 :root {
-    /* Rich Dark Palette */
-    --bg-main: #0a0b0d;
-    --bg-surface: #121417;
-    --bg-card: #181a1e;
+    /* High-End Studio Palette */
+    --bg-main: #ffffff;
+    --bg-surface: #f9f9fb;
+    --bg-card: #f3f4f6;
     
-    /* Text Colors */
-    --text-primary: #f4f5f6;
-    --text-secondary: #9aa0a6;
-    --text-muted: #646b73;
+    /* Typography Colors */
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #94a3b8;
     
-    /* Luxury Accents */
-    --accent-gold: #c5a059;
-    --accent-gold-hover: #dfb76c;
-    --border-subtle: rgba(255, 255, 255, 0.08);
-    --border-hover: rgba(197, 160, 89, 0.4);
+    /* Accents & Borders */
+    --accent-black: #0f172a;
+    --border-light: #e2e8f0;
+    --border-hover: #0f172a;
     
-    /* Fonts */
-    --font-serif: 'Cormorant Garamond', Georgia, serif;
-    --font-sans: 'Plus Jakarta Sans', sans-serif;
+    /* Typography */
+    --font-serif: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+    --font-sans: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
 
-    /* Effects */
-    --radius-card: 12px;
-    --radius-pill: 50px;
-    --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    /* Spacing & Layout */
+    --radius-card: 8px;
+    --radius-pill: 999px;
+    --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
