@@ -1,20 +1,21 @@
-/* --- Global Studio Reset --- */
+/* --- Global Base --- */
 body {
-    background-color: #ffffff !important;
+    background-color: #f8fafc !important;
     color: #0f172a !important;
     font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
     margin: 0;
     padding: 0;
 }
 
-/* --- Navigation Header Fix (Strict Spacing) --- */
+/* --- Header & Navigation Fix --- */
 .site-header {
-    background: #ffffff !important;
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(12px);
     border-bottom: 1px solid #e2e8f0;
     position: sticky;
     top: 0;
     z-index: 1000;
-    padding: 18px 40px;
+    padding: 16px 40px;
     display: flex !important;
     justify-content: space-between !important;
     align-items: center !important;
@@ -29,18 +30,18 @@ body {
     letter-spacing: -0.5px;
 }
 
-/* Hard Fix for Nav Link Overlap */
+/* Nav Link Overlap Fix */
 nav, .nav-links {
     display: flex !important;
     align-items: center !important;
-    gap: 28px !important; /* Ensures space between Home, Old Money, Streetwear */
+    gap: 32px !important; /* Proper distance between links */
 }
 
 nav a, .nav-links a {
-    color: #475569 !important;
+    color: #334155 !important;
     text-decoration: none !important;
     font-weight: 500;
-    font-size: 0.92rem;
+    font-size: 0.95rem;
     transition: color 0.2s ease;
 }
 
@@ -48,48 +49,75 @@ nav a:hover, .nav-links a:hover {
     color: #0f172a !important;
 }
 
-/* --- Pure Studio Hero Section (No Messy Backgrounds) --- */
+/* --- Luxury Frosted Beach Hero Section --- */
 .hero-section {
-    padding: 80px 20px 60px;
+    padding: 90px 20px 80px;
     text-align: center;
-    background-color: #f8fafc !important; /* Soft studio ambient grey */
-    background-image: none !important;
+    position: relative;
+    
+    /* High-Res Coastal Beach Background */
+    background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat fixed;
     border-bottom: 1px solid #e2e8f0;
 }
 
-.hero-section::after, .hero-section::before {
-    display: none !important; /* Kills any background graphic artifacts */
+/* Subtle Gradient Overlay for Soft Lighting */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(255,255,255,0.4) 0%, rgba(15,23,42,0.1) 100%);
+    pointer-events: none;
 }
 
+/* Frosted Glass Card Wrapper (Making Text Ultra-Legible) */
+.hero-section > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Hero Content Glass Styling */
 .hero-subtitle {
+    display: inline-block;
     text-transform: uppercase;
     letter-spacing: 3px;
-    font-size: 0.72rem;
-    color: #64748b !important;
-    font-weight: 600;
-    margin-bottom: 12px;
-    display: block;
+    font-size: 0.75rem;
+    color: #1e293b !important;
+    font-weight: 700;
+    margin-bottom: 14px;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 6px 16px;
+    border-radius: 20px;
+    backdrop-filter: blur(8px);
 }
 
 .hero-title {
     font-family: 'Playfair Display', Georgia, serif;
-    font-size: 3.2rem;
-    font-weight: 600;
-    line-height: 1.25;
+    font-size: 3.4rem;
+    font-weight: 700;
+    line-height: 1.2;
     color: #0f172a !important;
-    max-width: 800px;
-    margin: 0 auto 16px;
+    max-width: 820px;
+    margin: 0 auto 18px;
+    text-shadow: 0 2px 10px rgba(255, 255, 255, 0.8);
 }
 
 .hero-description {
-    color: #475569 !important;
-    font-size: 1.02rem;
-    max-width: 580px;
-    margin: 0 auto 32px;
+    color: #1e293b !important;
+    font-size: 1.05rem;
+    font-weight: 500;
+    max-width: 600px;
+    margin: 0 auto 36px;
     line-height: 1.6;
+    background: rgba(255, 255, 255, 0.75);
+    padding: 12px 24px;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
 }
 
-/* --- Clean Filter Pills --- */
+/* --- Filter Pills --- */
 .filter-container {
     display: flex;
     justify-content: center;
@@ -97,20 +125,23 @@ nav a:hover, .nav-links a:hover {
 }
 
 .pill {
-    background: #ffffff !important;
+    background: rgba(255, 255, 255, 0.9) !important;
     color: #0f172a !important;
-    border: 1px solid #cbd5e1 !important;
-    padding: 10px 22px;
+    border: 1px solid rgba(255, 255, 255, 0.8) !important;
+    padding: 10px 24px;
     border-radius: 999px;
-    font-size: 0.88rem;
-    font-weight: 500;
+    font-size: 0.9rem;
+    font-weight: 600;
     cursor: pointer;
     text-decoration: none;
-    transition: all 0.2s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(8px);
+    transition: all 0.25s ease;
 }
 
 .pill.active, .pill:hover {
     background: #0f172a !important;
     color: #ffffff !important;
     border-color: #0f172a !important;
+    transform: translateY(-2px);
 }
